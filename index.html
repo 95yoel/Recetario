@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Recetario</title>
+    <!--
+        Komentario Komentado      
+     -->
+</head>
+<body>
+    <div id="caja-principal">
+        <div id="formulario">
+                    <section>
+                        <table>
+                            <tr>
+                                <td>Nombre de Receta: </td>
+                                <td><input type="text" id="nombre" placeholder="Nombre Receta"></td>
+                                <td rowspan="2"><button type="button" id="btnCrearReceta">Crear Receta</button></td>
+                            </tr>
+                            <tr>
+                                <td>Número de comensales: </td>
+                                <td><input type="number" id="comensales" placeholder="Nº"></td>
+                            </tr>
+                            <tr>
+                                <td>Nombre de Ingrediente: </td>
+                                <td><input type="text" id="ingrediente-nombre"></td>
+                                <td>Cantidad por ingrediente (gramos): </td>
+                                <td><input type="number" id="ingrediente-cantidad" placeholder="Cantidad"></td>
+                                <td><button type="button" id="btnIngrediente">Añadir</button></td>
+                            </tr>
+                        </table>
+                    </section>
+        </div>
+        <hr>
+        <div id=caja-ingredientes>
+            <table>
+                <tr>
+                    <td>Buscar Recetas :</td>
+                    <td><input type="text" id="buscar-receta" placeholder="Buscar Recetas"/></td>
+                    <td><button type="button" id="btnBuscarRecetas">Buscar</button></td>
+                </tr>
+                <tr>
+                    <td>Añadir ingrediente :</td>
+                    <td><input type="text" id="anadir-ingrediente" placeholder="Añadir ingrediente"/></td>
+                    <td><input type="number" id="cantidad-ingrediente" placeholder="Cantidad"/></td>
+                    <td><button type="button" id="btnAnadirIngrediente">Añadir ingrediente</button></td>
+                </tr>
+                <!-- 
+                <tr>
+                    <td>Eliminar ingrediente :</td>
+                    <td><input type="text" id="eliminar-ingrediente" placeholder="Eliminar ingrediente"></td>
+                    <td><button type="button" id="btnEliminarIngrediente">Eliminar ingrediente</button></td>
+                </tr>
+                -->
+                <tr>
+                    <td>Modificar número de comensales :</td>
+                    <td><input type="text" id="numero-comensales" placeholder="Modificar comensales"/></td>
+                    <td><button type="button" id="btnModificarComensales">Modifica</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><button type="button" id="btnEliminarIngredientes">Eliminar ingredientes seleccionados</button></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><button type="button" id="btnVisualizarReceta">Visualizar Recetas</button></td>
+                    <td colspan="3"><button type="button"></button>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

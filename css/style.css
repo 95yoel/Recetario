@@ -1,0 +1,72 @@
+body{
+    
+    margin-top: 8%;
+    margin-left: 30%; 
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+#caja-principal{
+    width: 60%;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 2px 25px 1px rgba(0, 0, 0, 0.64);
+}
+#formulario{
+    display: inline;
+    justify-content: space-between;
+}
+section button{
+    margin-right: 5%;
+}
+hr{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 88%;
+    border-color: rgba(63,94,251,1) ;
+    border-radius: 20px;
+    opacity: 60%;
+}
+table{
+    width: 100%;
+}
+
+td{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#btnCrearReceta{
+    margin-left: 120px;
+}
+button{
+        color: #333;
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        padding: 1% 1%;
+        font-size: 12px;
+        transition: 0.4;
+        text-transform: uppercase;
+        background-color: white; 
+        font-weight: 700;
+}
+button:hover{
+    background-color: #333;
+    color: white;
+    transition: 0.4;
+}
+button:active{
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+input{
+    margin-right: 20px;
+    position: relative;
+    width: 80%;
+    background: none;
+    color: #333;
+    border: none;
+    outline: 0px;
+    border-bottom: 1px solid #c7c7c7;
+}

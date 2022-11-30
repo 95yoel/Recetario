@@ -1,0 +1,1 @@
+probar a pasar variables con localstorage
