@@ -83,4 +83,3 @@ function abrir(){
 // - Joel García Álvarez
 // - Yoel Villa Palomino
 // - Pablo Fernández Barredo
-
