@@ -104,23 +104,48 @@ function abrirReceta(){
 }
 //Inveciones de Yoel
 
-filtrar = ()=>{
-    resultado.innerHTML = "";
-    const busqueda = buscarReceta.value.toLowerCase();
-    for (n in listaRecetas){
-        let nombre = listaRecetas[n].nombre.toLowerCase();
-        //
-        if(nombre.indexOf(busqueda) !== -1){
-            resultado.innerHTML += `<li><i>${listaRecetas[n].nombre}</i>&nbsp&nbsp&nbsp&nbsp&nbsp <button id="boton${n}" value ="${n}"> MODIFICAR</button></li>`;
-        }
-        
-    }
-    if(resultado.innerHTML === ""){
-        resultado.innerHTML = `<li">No existe</li>`;
-    }
-    
-}
-btnBuscarReceta.addEventListener("click",filtrar);
-buscarReceta.addEventListener('keyup',filtrar);
+btnBuscarReceta.addEventListener("click",()=>{
+    comprobarReceta();
+});
 
-filtrar();
+
+function comprobarReceta(){
+    var recetaEncontrada = false;
+    var receta = buscarReceta.value;
+    for (var i = 0; i < listaRecetas.length; i++) {
+        if (listaRecetas[i].nombre == receta) {
+            recetaEncontrada = true;
+            console.log(i);
+            break;    
+        }
+    }
+    if (recetaEncontrada) {
+        localStorage.setItem("recetaEncontrada",JSON.stringify(listaRecetas[i]));
+        abrirReceta();
+    } else {
+        buscarReceta.value="";
+        alert("No existe la receta");
+    }
+}
+
+
+// filtrar = ()=>{
+//     resultado.innerHTML = "";
+//     const busqueda = buscarReceta.value.toLowerCase();
+//     for (n in listaRecetas){
+//         let nombre = listaRecetas[n].nombre.toLowerCase();
+//         //
+//         if(nombre.indexOf(busqueda) !== -1){
+//             resultado.innerHTML += `<li><i>${listaRecetas[n].nombre}</i>&nbsp&nbsp&nbsp&nbsp&nbsp <button id="boton${n}" value ="${n}"> MODIFICAR</button></li>`;
+//         }
+        
+//     }
+//     if(resultado.innerHTML === ""){
+//         resultado.innerHTML = `<li">No existe</li>`;
+//     }
+    
+// }
+// btnBuscarReceta.addEventListener("click",filtrar);
+// buscarReceta.addEventListener('keyup',filtrar);
+
+// filtrar();

@@ -73,3 +73,11 @@ input{
 li{
     list-style: none;
 }
+#check{
+    display: flex;
+    width: 100%;
+    
+}
+#modificar{
+    right: 0;
+}
