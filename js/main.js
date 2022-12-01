@@ -107,8 +107,6 @@ function abrirReceta(){
 btnBuscarReceta.addEventListener("click",()=>{
     comprobarReceta();
 });
-
-
 function comprobarReceta(){
     var recetaEncontrada = false;
     var receta = buscarReceta.value;
