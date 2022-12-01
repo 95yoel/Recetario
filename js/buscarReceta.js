@@ -1,4 +1,4 @@
-//convierte el json en una variable para poder utilizarla en el html
+nombreReceta = JSON.parse(localStorage.getItem("buscarNombre"));
 RECETAS =JSON.parse(localStorage.getItem("listaRecetas"));
 
 document.write("<div class='caja'>");
@@ -18,6 +18,3 @@ for (n in RECETAS){
     contador++;
 }
 document.write("</div>");
-
-
-//FUNCIONA PERFECTAMENTE

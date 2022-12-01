@@ -8,6 +8,7 @@ const btnModificarComensales = document.querySelector('#btnModificarComensales')
 const btnVisualizarReceta = document.querySelector('#btnVisualizarReceta');
 const btnEliminarIngredientes = document.querySelector('#btnEliminarIngrediente');
 const btnAnadirIngredienteLista = document.querySelector('#btnIngrediente');
+const btnBucarReceta = document.querySelector('#btnBuscarRecetas');
 
 //INPUTS
 
@@ -19,9 +20,12 @@ const newCantIngredientes = document.getElementById("ingrediente-cantidad");
 const newIngredientes = document.getElementById("anadir-ingrediente");
 const delIngredientes = document.getElementById("eliminar-ingrediente");
 const modComensales = document.getElementById("numero-comensales");
+const buscarReceta = document.getElementById("buscar-receta");
 
 listaRecetas = [];
 listaIngredientes = [];
+//Variable creada para pasarla al JSON en un nuevo html-js
+buscarNombre = buscarReceta.value;
 
 btnCrearReceta.addEventListener("click",()=>{
         //objeto Receta
@@ -83,3 +87,16 @@ function abrir(){
 // - Joel García Álvarez
 // - Yoel Villa Palomino
 // - Pablo Fernández Barredo
+// comentario
+
+//Parte de Joel para buscar una receta por su nombre
+
+localStorage.setItem("buscarNombre",JSON.stringify(buscarReceta));
+
+btnBucarReceta.addEventListener("click",()=>{
+    abrirReceta();
+});
+
+function abrirReceta(){
+    window.open("buscarReceta.html","width=120","height=120");
+}
