@@ -8,7 +8,7 @@ const btnModificarComensales = document.querySelector('#btnModificarComensales')
 const btnVisualizarReceta = document.querySelector('#btnVisualizarReceta');
 const btnEliminarIngredientes = document.querySelector('#btnEliminarIngrediente');
 const btnAnadirIngredienteLista = document.querySelector('#btnIngrediente');
-const btnBucarReceta = document.querySelector('#btnBuscarRecetas');
+const btnBuscarReceta = document.querySelector('#btnBuscarRecetas');
 
 //INPUTS
 
@@ -20,7 +20,9 @@ const newCantIngredientes = document.getElementById("ingrediente-cantidad");
 const newIngredientes = document.getElementById("anadir-ingrediente");
 const delIngredientes = document.getElementById("eliminar-ingrediente");
 const modComensales = document.getElementById("numero-comensales");
-const buscarReceta = document.getElementById("buscar-receta");
+const buscarReceta = document.querySelector("#buscar-receta");
+
+const resultado = document.querySelector('#resultado');
 
 listaRecetas = [];
 listaIngredientes = [];
@@ -93,10 +95,32 @@ function abrir(){
 
 localStorage.setItem("buscarNombre",JSON.stringify(buscarReceta));
 
-btnBucarReceta.addEventListener("click",()=>{
-    abrirReceta();
-});
+// btnBucarReceta.addEventListener("click",()=>{
+//     abrirReceta();
+// });
 
 function abrirReceta(){
     window.open("buscarReceta.html","width=120","height=120");
 }
+//Inveciones de Yoel
+
+filtrar = ()=>{
+    resultado.innerHTML = "";
+    const busqueda = buscarReceta.value.toLowerCase();
+    for (n in listaRecetas){
+        let nombre = listaRecetas[n].nombre.toLowerCase();
+        //
+        if(nombre.indexOf(busqueda) !== -1){
+            resultado.innerHTML += `<li><i>${listaRecetas[n].nombre}</i>&nbsp&nbsp&nbsp&nbsp&nbsp <button id="boton${n}" value ="${n}"> MODIFICAR</button></li>`;
+        }
+        
+    }
+    if(resultado.innerHTML === ""){
+        resultado.innerHTML = `<li">No existe</li>`;
+    }
+    
+}
+btnBuscarReceta.addEventListener("click",filtrar);
+buscarReceta.addEventListener('keyup',filtrar);
+
+filtrar();
