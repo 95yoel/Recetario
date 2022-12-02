@@ -8,7 +8,7 @@ const btnModificarComensales = document.querySelector('#btnModificarComensales')
 const btnVisualizarReceta = document.querySelector('#btnVisualizarReceta');
 const btnEliminarIngredientes = document.querySelector('#btnEliminarIngrediente');
 const btnAnadirIngredienteLista = document.querySelector('#btnIngrediente');
-const btnBuscarReceta = document.querySelector('#btnBuscarRecetas');
+const btnBucarReceta = document.querySelector('#btnBuscarRecetas');
 
 //INPUTS
 
@@ -20,9 +20,7 @@ const newCantIngredientes = document.getElementById("ingrediente-cantidad");
 const newIngredientes = document.getElementById("anadir-ingrediente");
 const delIngredientes = document.getElementById("eliminar-ingrediente");
 const modComensales = document.getElementById("numero-comensales");
-const buscarReceta = document.querySelector("#buscar-receta");
-
-const resultado = document.querySelector('#resultado');
+const buscarReceta = document.getElementById("buscar-receta");
 
 listaRecetas = [];
 listaIngredientes = [];
@@ -85,47 +83,33 @@ function abrir(){
 //var nombreVariable=JSON.parse(localStorage.getItem("nombreClave"));
 
 
-//Realizado por:
-// - Joel García Álvarez
-// - Yoel Villa Palomino
-// - Pablo Fernández Barredo
-// comentario
+btnBucarReceta.addEventListener("click",()=>{
+    comprobarReceta();
+});
 
-//Parte de Joel para buscar una receta por su nombre
-
-localStorage.setItem("buscarNombre",JSON.stringify(buscarReceta));
-
-// btnBucarReceta.addEventListener("click",()=>{
-//     abrirReceta();
-// });
+function comprobarReceta(){
+    var recetaEncontrada=false;
+    var receta = buscarReceta.value;
+    for(var i = 0; i<listaRecetas.length; i++){
+        if(listaRecetas[i].nombre == receta){
+        recetaEncontrada=true;
+        console.log(i);
+        break;
+        }
+    }
+    if(recetaEncontrada){
+        document.getElementById("buscar-receta").style.color="black";
+        localStorage.setItem("recetaEncontrada",JSON.stringify(listaRecetas[i]));
+        abrirReceta();
+    } else{
+        document.getElementById("buscar-receta").style.color="red";
+        alert("La receta no existe");
+    }
+}
 
 function abrirReceta(){
     window.open("buscarReceta.html","width=120","height=120");
 }
-//Inveciones de Yoel
-
-btnBuscarReceta.addEventListener("click",()=>{
-    comprobarReceta();
-});
-function comprobarReceta(){
-    var recetaEncontrada = false;
-    var receta = buscarReceta.value;
-    for (var i = 0; i < listaRecetas.length; i++) {
-        if (listaRecetas[i].nombre == receta) {
-            recetaEncontrada = true;
-            console.log(i);
-            break;    
-        }
-    }
-    if (recetaEncontrada) {
-        localStorage.setItem("recetaEncontrada",JSON.stringify(listaRecetas[i]));
-        abrirReceta();
-    } else {
-        buscarReceta.value="";
-        alert("No existe la receta");
-    }
-}
-
 
 // filtrar = ()=>{
 //     resultado.innerHTML = "";
@@ -147,3 +131,10 @@ function comprobarReceta(){
 // buscarReceta.addEventListener('keyup',filtrar);
 
 // filtrar();
+
+//Realizado por:
+// - Joel García Álvarez
+// - Yoel Villa Palomino
+// - Pablo Fernández Barredo
+// comentario
+

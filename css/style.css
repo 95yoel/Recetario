@@ -70,14 +70,3 @@ input{
     outline: 0px;
     border-bottom: 1px solid #c7c7c7;
 }
-li{
-    list-style: none;
-}
-#check{
-    display: flex;
-    width: 100%;
-    
-}
-#modificar{
-    right: 0;
-}
