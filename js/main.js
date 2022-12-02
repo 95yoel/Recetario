@@ -22,12 +22,27 @@ const delIngredientes = document.getElementById("eliminar-ingrediente");
 const modComensales = document.getElementById("numero-comensales");
 const buscarReceta = document.getElementById("buscar-receta");
 
+//CURSORES
+document.getElementById("btnVisualizarReceta").style.cursor = "not-allowed";
+document.getElementById("btnBuscarRecetas").style.cursor = "not-allowed";
+document.getElementById("buscar-receta").style.cursor = "not-allowed";
+
 listaRecetas = [];
 listaIngredientes = [];
 //Variable creada para pasarla al JSON en un nuevo html-js
 buscarNombre = buscarReceta.value;
 
 btnCrearReceta.addEventListener("click",()=>{
+    //activamos el boton de visualizar recetas
+    btnVisualizarReceta.disabled = false;
+    document.getElementById("btnVisualizarReceta").style.cursor = "pointer";
+    //activamos el boton de buscar recetas
+    btnBucarReceta.disabled = false;
+    document.getElementById("btnBuscarRecetas").style.cursor = "pointer";
+    //activamos el input de buscar recetas
+    buscarReceta.disabled = false;
+    document.getElementById("buscar-receta").style.cursor = "pointer";
+
         //objeto Receta
        Receta={
         nombre: nombreReceta.value,
