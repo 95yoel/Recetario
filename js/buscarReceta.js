@@ -54,3 +54,4 @@ document.write(`<td colspan ="2"><input type="text" id="eliminar-ingrediente" pl
 document.write(`</tr>`);
 
 document.write(`</table>`);
+
