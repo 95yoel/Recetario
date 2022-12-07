@@ -55,7 +55,7 @@ document.write(`</tr>`);
 document.write(`<tr>`);
 document.write(`<td><button type ="button" id="btnEliminarIngrediente">ELIMINAR INGREDIENTE </buttom></td>`);
 document.write(`<td><input type="text" id="eliminar-ingrediente" placeholder="Eliminar ingrediente"/></td>`);
-document.write(`<td><input type="text" placeholder="Cantidad"></td>`);
+document.write(`<td></td>`);
 document.write(`</tr>`);
 document.write(`<td colspan ="3"><button type ="button" id="btnModificar">MODIFICAR</button></td>`);
 
@@ -105,11 +105,15 @@ anadirIngrediente.addEventListener("click",()=>{
     console.log(nombreReceta);
     
     
-}
-);
+});
 //funcion para eliminar ingrediente
 const eliminarIngrediente = document.querySelector('#btnEliminarIngrediente');
 eliminarIngrediente.addEventListener("click",()=>{
+    if(document.getElementById("eliminar-ingrediente").value == "" || document.getElementById("eliminar-ingrediente").value == " "){
+        alert("El nombre del ingrediente no puede estar vacio");
+        return;
+    }
+
     let ingrediente = document.getElementById("eliminar-ingrediente").value;
     for (i in nombreReceta.ingredientes){
         if (nombreReceta.ingredientes[i].nombreIngrediente == ingrediente){
@@ -118,5 +122,4 @@ eliminarIngrediente.addEventListener("click",()=>{
     }
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
-}   
-);
+});
