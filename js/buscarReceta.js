@@ -1,3 +1,4 @@
+//obtenemos el Json que aloja el objeto
 nombreReceta = JSON.parse(localStorage.getItem("recetaEncontrada"));
 
 console.log(nombreReceta);
@@ -73,6 +74,8 @@ modificar.addEventListener("click",()=>{
         //alert(nombreReceta.ingredientes[n].cantidad);
         nombreReceta.ingredientes[n].cantidad=document.getElementById(`cambiarCantIngredientes${n}`).value;
     }
+    //enviar a localstorage
+    localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     
     console.log(nombreReceta);
 });
