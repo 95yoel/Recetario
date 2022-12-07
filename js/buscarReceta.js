@@ -86,11 +86,25 @@ modificar.addEventListener("click",()=>{
 //funciton para añadir ingrediente
 const anadirIngrediente = document.querySelector('#btnAnadirIngrediente');
 anadirIngrediente.addEventListener("click",()=>{
+    //comprobar que receta no sea un nombre vacio o espacios
+    
+    if(document.getElementById("anadir-ingrediente").value == "" || document.getElementById("anadir-ingrediente").value == " "){
+        alert("El nombre del ingrediente no puede estar vacio");
+        return;
+    }
+    //comprobar que el numero de comensales no sea un numero vacio o espacios
+    if(document.getElementById("cantidad-ingrediente").value == "" || document.getElementById("cantidad-ingrediente").value == " "){
+        alert("La cantidad de ingredientes no puede estar vacía");
+        return;
+    }
+
     let ingrediente = document.getElementById("anadir-ingrediente").value;
     let cantidad = document.getElementById("cantidad-ingrediente").value;
     nombreReceta.ingredientes.push({nombreIngrediente: ingrediente, cantidad: cantidad});
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
+    
+    
 }
 );
 //funcion para eliminar ingrediente
