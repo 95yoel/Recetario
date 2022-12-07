@@ -79,3 +79,26 @@ modificar.addEventListener("click",()=>{
     
     console.log(nombreReceta);
 });
+//funciton para añadir ingrediente
+const anadirIngrediente = document.querySelector('#btnAnadirIngrediente');
+anadirIngrediente.addEventListener("click",()=>{
+    let ingrediente = document.getElementById("anadir-ingrediente").value;
+    let cantidad = document.getElementById("cantidad-ingrediente").value;
+    nombreReceta.ingredientes.push({nombreIngrediente: ingrediente, cantidad: cantidad});
+    localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
+    console.log(nombreReceta);
+}
+);
+//funcion para eliminar ingrediente
+const eliminarIngrediente = document.querySelector('#btnEliminarIngrediente');
+eliminarIngrediente.addEventListener("click",()=>{
+    let ingrediente = document.getElementById("eliminar-ingrediente").value;
+    for (i in nombreReceta.ingredientes){
+        if (nombreReceta.ingredientes[i].nombreIngrediente == ingrediente){
+            nombreReceta.ingredientes.splice(i,1);
+        }
+    }
+    localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
+    console.log(nombreReceta);
+}   
+);
