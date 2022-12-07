@@ -74,10 +74,14 @@ modificar.addEventListener("click",()=>{
         //alert(nombreReceta.ingredientes[n].cantidad);
         nombreReceta.ingredientes[n].cantidad=document.getElementById(`cambiarCantIngredientes${n}`).value;
     }
+    //cambiar comnesales
+    nombreReceta.comensales = document.getElementById("cambiarComensales").value;
     //enviar a localstorage
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     
     console.log(nombreReceta);
+    alert("Receta modificada");
+    window.close();
 });
 //funciton para añadir ingrediente
 const anadirIngrediente = document.querySelector('#btnAnadirIngrediente');
