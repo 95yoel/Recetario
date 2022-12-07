@@ -1,6 +1,5 @@
 body{
     margin-top:8%;
-    display: flex;
     justify-content: center;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -18,6 +17,9 @@ body{
 }
 section button{
     margin-right: 5%;
+}
+form{
+    display: flex;
 }
 hr{
     margin-top: 4%;

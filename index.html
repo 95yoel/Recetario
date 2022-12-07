@@ -11,13 +11,14 @@
      -->
 </head>
 <body>
+    <form action="">
     <div id="caja-principal">
         <div id="formulario">
                     <section>
                         <table>
                             <tr>
                                 <td>Nombre de Receta: </td>
-                                <td><input type="text" id="nombre" placeholder="Nombre Receta"></td>
+                                <td><input type="text" id="nombre" placeholder="Nombre Receta" title="La receta debe tener un nombre..." pattern="^([A-Za-z])"></td>
                                 <td rowspan="2"><button type="button" id="btnCrearReceta">Crear Receta</button></td>
                             </tr>
                             <tr>
@@ -34,6 +35,7 @@
                         </table>
                     </section>
         </div>
+    </form>
         <hr>
         <div id=caja-ingredientes>
             <table>
@@ -71,6 +73,7 @@
             </table>
         </div>
     </div>
+</form>
     <script src="js/main.js"></script>
 </body>
 </html>

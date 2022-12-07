@@ -39,19 +39,40 @@ document.getElementById("cambiarComensales").value =`${nombreReceta.comensales}`
 document.write(`<tr><th>Ingrediente</th><th>Cantidad</th>`);
 for (i in nombreReceta.ingredientes){
     
+    //importante el id de aqui que cambia 
     document.write(`<tr><td><input type="text" id="cambiarIngredientes${i}"></td><td><input type="text" id = "cambiarCantIngredientes${i}"></td></tr>`);
     document.getElementById(`cambiarIngredientes${i}`).value = `${nombreReceta.ingredientes[i].nombreIngrediente}`;
     document.getElementById(`cambiarCantIngredientes${i}`).value = `${nombreReceta.ingredientes[i].cantidad}`;
 }
-document.write(`<tr><td>Añadir ingrediente :</td>`);
+document.write(`</table>`);
+document.write(`<hr>`);
+document.write(`<table>`);
+document.write(`<tr><td><button type ="button" id="btnAnadirIngrediente">AÑADIR INGREDIENTE :</button></td>`);
 document.write(`<td><input type="text" id="anadir-ingrediente" placeholder="Añadir ingrediente"/></td>`);
-document.write(`<td><input type="number" id="cantidad-ingrediente" placeholder="Cantidad"/><button type="button" id="btnAnadirIngrediente">+</button></td>`);
-
+document.write(`<td><input type="number" id="cantidad-ingrediente" placeholder="Cantidad"/></td>`);
 document.write(`</tr>`);
 document.write(`<tr>`);
-document.write(`<td>Eliminar ingrediente :</td>`);
-document.write(`<td colspan ="2"><input type="text" id="eliminar-ingrediente" placeholder="Eliminar ingrediente"/><button type="button" id="btnEliminarIngrediente">-</button></td>`);
+document.write(`<td><button type ="button" id="btnEliminarIngrediente">ELIMINAR INGREDIENTE </buttom></td>`);
+document.write(`<td><input type="text" id="eliminar-ingrediente" placeholder="Eliminar ingrediente"/></td>`);
+document.write(`<td><input type="text" placeholder="Cantidad"></td>`);
+document.write(`</tr>`);
+document.write(`<td colspan ="3"><button type ="button" id="btnModificar">MODIFICAR</button></td>`);
+
 document.write(`</tr>`);
 
 document.write(`</table>`);
+const modificar = document.querySelector('#btnModificar');
 
+modificar.addEventListener("click",()=>{
+    //almacenar primero valores input y despues rellenarlos con el for 
+    for (n in nombreReceta.ingredientes){
+        //alert(nombreReceta.ingredientes[n].nombreIngrediente);
+        nombreReceta.ingredientes[n].nombreIngrediente=document.getElementById(`cambiarIngredientes${n}`).value;
+    }
+    for (n in nombreReceta.ingredientes){
+        //alert(nombreReceta.ingredientes[n].cantidad);
+        nombreReceta.ingredientes[n].cantidad=document.getElementById(`cambiarCantIngredientes${n}`).value;
+    }
+    
+    console.log(nombreReceta);
+});

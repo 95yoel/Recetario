@@ -5,6 +5,7 @@ body{
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     transition:1s;
 }
+
 h1{
     margin-left: 3%;
 }
@@ -27,6 +28,9 @@ hr{
 }
 table{
     width: 100%;
+    margin-bottom: 5%;
+    line-height: 180%;
+
 }
 table td{
     text-align: center;
@@ -42,6 +46,7 @@ input{
     outline: 0px;
     border-bottom: 1px solid #c7c7c7;
     width: 50%;
+    text-align: center;
 }
 button{
     border: none;

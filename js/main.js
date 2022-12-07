@@ -12,6 +12,7 @@ const btnBucarReceta = document.querySelector('#btnBuscarRecetas');
 
 //INPUTS
 
+
 const nombreReceta = document.getElementById("nombre");
 const numComensales = document.getElementById("comensales");
 const nomIngredientes = document.getElementById("ingrediente-nombre");
