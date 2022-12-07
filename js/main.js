@@ -50,7 +50,17 @@ btnCrearReceta.addEventListener("click",()=>{
         comensales : numComensales.value,
         ingredientes : listaIngredientes
        }
-       
+       //comprobar que receta no sea un nombre vacio o espacios
+         if(Receta.nombre == "" || Receta.nombre == " "){
+            alert("El nombre de la receta no puede estar vacio");
+            return;
+        }
+        //comprobar que el numero de comensales no sea un numero vacio o espacios
+        if(Receta.comensales == "" || Receta.comensales == " "){
+            alert("El numero de comensales no puede estar vacio");
+            return;
+        }
+        
        //vaciar los inputs
        nombreReceta.value="";
        numComensales.value ="";
