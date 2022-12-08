@@ -1,31 +1,13 @@
 //obtenemos el Json que aloja el objeto
 nombreReceta = JSON.parse(localStorage.getItem("recetaEncontrada"));
 
+//comprobar si existe recetaActualizada para mostrarla
+if (localStorage.getItem("recetaActualizada") != null){
+
+    nombreReceta = JSON.parse(localStorage.getItem("recetaActualizada"));
+}
+
 console.log(nombreReceta);
-
-// document.write("<div class='caja'>");
-// document.write("<div class='contenido'>");
-//     document.write(`<h1>${nombreReceta.nombre}</h1>`);
-//     document.write(`<h3>Comensales: ${nombreReceta.comensales}</h3>`);
-//     document.write("<h3>Lista de Ingredientes:</h3>");
-//     document.write("<table><tr><th>Ingrediente</th><th>Cantidad</th></tr>");
-//     for (i in nombreReceta.ingredientes){
-//         document.write(`<tr><td>${nombreReceta.ingredientes[i].nombreIngrediente}</td><td>${nombreReceta.ingredientes[i].cantidad}</td></tr>`);
-
-//     }
-//     document.write("<tr><td>Añadir ingrediente :</td>");
-//     document.write(`<td><input type="text" id="anadir-ingrediente" placeholder="Añadir ingrediente"/></td>`);
-//     document.write(`<td><input type="number" id="cantidad-ingrediente" placeholder="Cantidad"/></td>`);
-//     document.write(`<td><button type="button" id="btnAnadirIngrediente">Añadir ingrediente</button></td>`);
-//     document.write(`</tr>`);
-//     document.write(`<tr>`);
-//     document.write(`<td>Eliminar ingrediente :</td>`);
-
-
-
-//     document.write("</table>");
-//     document.write("<hr>");
-// document.write("</div>");
 
 document.write("<div class='caja'>");
 document.write("<div class='contenido'>");
@@ -103,7 +85,10 @@ anadirIngrediente.addEventListener("click",()=>{
     nombreReceta.ingredientes.push({nombreIngrediente: ingrediente, cantidad: cantidad});
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
-    
+    //eliminar input
+    document.getElementById("anadir-ingrediente").value = "";
+    document.getElementById("cantidad-ingrediente").value = "";
+    alert("Ingrediente añadido");
     
 });
 //funcion para eliminar ingrediente
@@ -122,4 +107,15 @@ eliminarIngrediente.addEventListener("click",()=>{
     }
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
+    //vaciar input
+    document.getElementById("eliminar-ingrediente").value = "";
+
+    alert("Ingrediente eliminado");
+});
+//funcion para eliminar receta
+const eliminarReceta = document.querySelector('#btnEliminarReceta');
+eliminarReceta.addEventListener("click",()=>{
+    localStorage.removeItem("recetaActualizada");
+    alert("Receta eliminada");
+    window.close();
 });
