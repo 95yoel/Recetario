@@ -115,9 +115,9 @@ btnBucarReceta.addEventListener("click",()=>{
 
 function comprobarReceta(){
     var recetaEncontrada=false;
-    var receta = buscarReceta.value;
+    var receta = buscarReceta.value.toUpperCase();
     for(var i = 0; i<listaRecetas.length; i++){
-        if(listaRecetas[i].nombre == receta){
+        if(listaRecetas[i].nombre.toUpperCase() == receta){
         recetaEncontrada=true;
         console.log(i);
         indice = i;
