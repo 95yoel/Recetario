@@ -40,11 +40,9 @@
 //     document.write("</div>");
 // }
 
-
-
 //convierte el json en una variable para poder utilizarla en el html
-//añadir recetaactualizada a la lista de recetas
 RECETAS =JSON.parse(localStorage.getItem("listaRecetas"));
+
 if (localStorage.getItem("recetaActualizada") != null){
     RECETA_ACTUALIZADA = JSON.parse(localStorage.getItem("recetaActualizada"));
     RECETAS.unshift(RECETA_ACTUALIZADA);
@@ -60,7 +58,6 @@ for (n in RECETAS){
     document.write("<table><tr><th>Ingrediente</th><th>Cantidad</th></tr>");
     for (i in RECETAS[n].ingredientes){
         document.write(`<tr><td>${RECETAS[n].ingredientes[i].nombreIngrediente}</td><td>${RECETAS[n].ingredientes[i].cantidad}</td></tr>`);
-        
     }
     document.write("</table>");
     document.write("<hr>");

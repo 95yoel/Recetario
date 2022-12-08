@@ -22,7 +22,7 @@ document.getElementById("cambiarComensales").value =`${nombreReceta.comensales}`
 document.write(`<tr><th>Ingrediente</th><th>Cantidad</th>`);
 for (i in nombreReceta.ingredientes){
     
-    //importante el id de aqui que cambia 
+    
     document.write(`<tr><td><input type="text" id="cambiarIngredientes${i}"></td><td><input type="text" id = "cambiarCantIngredientes${i}"></td></tr>`);
     document.getElementById(`cambiarIngredientes${i}`).value = `${nombreReceta.ingredientes[i].nombreIngrediente}`;
     document.getElementById(`cambiarCantIngredientes${i}`).value = `${nombreReceta.ingredientes[i].cantidad}`;
@@ -59,6 +59,7 @@ modificar.addEventListener("click",()=>{
     //cambiar comnesales
     nombreReceta.comensales = document.getElementById("cambiarComensales").value;
     //enviar a localstorage
+    localStorage.removeItem("recetaActualizada");
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     
     console.log(nombreReceta);
@@ -83,6 +84,8 @@ anadirIngrediente.addEventListener("click",()=>{
     let ingrediente = document.getElementById("anadir-ingrediente").value;
     let cantidad = document.getElementById("cantidad-ingrediente").value;
     nombreReceta.ingredientes.push({nombreIngrediente: ingrediente, cantidad: cantidad});
+
+    localStorage.removeItem("recetaActualizada");
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
     //eliminar input
@@ -105,6 +108,8 @@ eliminarIngrediente.addEventListener("click",()=>{
             nombreReceta.ingredientes.splice(i,1);
         }
     }
+
+    localStorage.removeItem("recetaActualizada");
     localStorage.setItem("recetaActualizada",JSON.stringify(nombreReceta));
     console.log(nombreReceta);
     //vaciar input
@@ -119,3 +124,5 @@ eliminarReceta.addEventListener("click",()=>{
     alert("Receta eliminada");
     window.close();
 });
+
+
