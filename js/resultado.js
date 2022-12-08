@@ -42,8 +42,10 @@
 
 //convierte el json en una variable para poder utilizarla en el html
 RECETAS =JSON.parse(localStorage.getItem("listaRecetas"));
+INDICE = JSON.parse(localStorage.getItem("indice"));
 
 if (localStorage.getItem("recetaActualizada") != null){
+    borrarReceta(INDICE);
     RECETA_ACTUALIZADA = JSON.parse(localStorage.getItem("recetaActualizada"));
     RECETAS.unshift(RECETA_ACTUALIZADA);
     localStorage.setItem("listaRecetas",JSON.stringify(RECETAS));
@@ -65,5 +67,10 @@ for (n in RECETAS){
 }
 document.write("</div>");
 
+//borrar receta en el indice
+function borrarReceta(indice){
+    RECETAS.splice(indice,1);
+    
+}
 
 //FUNCIONA PERFECTAMENTE

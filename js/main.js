@@ -120,6 +120,9 @@ function comprobarReceta(){
         if(listaRecetas[i].nombre == receta){
         recetaEncontrada=true;
         console.log(i);
+        indice = i;
+        //enviar indice al localstorage
+        localStorage.setItem("indice",JSON.stringify(indice));
         break;
         }
     }
@@ -136,6 +139,7 @@ function comprobarReceta(){
 function abrirReceta(){
     window.open("buscarReceta.html","width=120","height=120");
 }
+//borrar receta si se ha modificado
 
 //Realizado por:
 // - Joel García Álvarez
