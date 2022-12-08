@@ -6,7 +6,7 @@ contador = Number(0);
 //comprobar si existe recetaActualizada para mostrarla
 if (localStorage.getItem("recetaActualizada") != null){
     RECETA_ACTUALIZADA = JSON.parse(localStorage.getItem("recetaActualizada"));
-    document.write(`<h1>${contador+1}. ${RECETA_ACTUALIZADA.nombre}</h1>`);
+    document.write(`<h1>${RECETA_ACTUALIZADA.nombre}</h1>`);
     document.write("<h3>Comensales: "+RECETA_ACTUALIZADA.comensales+"</h3>");
     document.write("<h3>Lista de Ingredientes:</h3>");
     document.write("<table><tr><th>Ingrediente</th><th>Cantidad</th></tr>");

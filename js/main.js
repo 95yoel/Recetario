@@ -137,27 +137,6 @@ function abrirReceta(){
     window.open("buscarReceta.html","width=120","height=120");
 }
 
-// filtrar = ()=>{
-//     resultado.innerHTML = "";
-//     const busqueda = buscarReceta.value.toLowerCase();
-//     for (n in listaRecetas){
-//         let nombre = listaRecetas[n].nombre.toLowerCase();
-//         //
-//         if(nombre.indexOf(busqueda) !== -1){
-//             resultado.innerHTML += `<li><i>${listaRecetas[n].nombre}</i>&nbsp&nbsp&nbsp&nbsp&nbsp <button id="boton${n}" value ="${n}"> MODIFICAR</button></li>`;
-//         }
-        
-//     }
-//     if(resultado.innerHTML === ""){
-//         resultado.innerHTML = `<li">No existe</li>`;
-//     }
-    
-// }
-// btnBuscarReceta.addEventListener("click",filtrar);
-// buscarReceta.addEventListener('keyup',filtrar);
-
-// filtrar();
-
 //Realizado por:
 // - Joel García Álvarez
 // - Yoel Villa Palomino
